@@ -1,0 +1,31 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate simulated data
+np.random.seed(42)  # For reproducibility
+date_range = pd.date_range(start="2023-01-01", end="2023-12-31", freq="B")  # Business days
+volume = np.random.randint(low=100000, high=5000000, size=len(date_range))  # Simulated trading volumes
+
+# Create a DataFrame
+data = {"Date": date_range, "Volume": volume}
+df = pd.DataFrame(data)
+
+# Define the start and end dates for the plot
+start_date = "2023-06-01"
+end_date = "2023-09-30"
+
+# Filter the data for the specified date range
+filtered_data = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
+
+# Create the bar plot
+plt.figure(figsize=(12, 6))
+plt.bar(filtered_data['Date'], filtered_data['Volume'], color='orange', width=1.0, label='Trading Volume')
+plt.title("Alphabet Inc. Trading Volume (Simulated Data)")
+plt.xlabel("Date")
+plt.ylabel("Trading Volume")
+plt.xticks(rotation=45)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
+plt.show()
