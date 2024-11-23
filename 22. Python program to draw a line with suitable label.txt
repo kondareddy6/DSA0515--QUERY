@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [0, 1, 2, 3, 4, 5]
+y = [0, 1, 4, 9, 16, 25]
+
+# Create the plot
+plt.plot(x, y, label='y = x^2')
+
+# Adding labels and title
+plt.xlabel('X-axis Label')  # Label for the x-axis
+plt.ylabel('Y-axis Label')  # Label for the y-axis
+plt.title('Line Plot with Axis Labels and Title')  # Title of the plot
+
+# Add legend
+plt.legend()
+
+# Show the plot
+plt.show()
