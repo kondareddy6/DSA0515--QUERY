@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+# Step 1: Define the data
+languages = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+popularity = [22.2, 17.6, 8.8, 8, 7.7, 6.7]
+
+# Step 2: Create the horizontal bar chart
+plt.figure(figsize=(10, 6))  # Set figure size
+plt.barh(languages, popularity, color=['blue', 'green', 'red', 'purple', 'orange', 'cyan'])
+
+# Step 3: Customize the chart
+plt.title("Popularity of Programming Languages", fontsize=14)
+plt.xlabel("Popularity (%)", fontsize=12)
+plt.ylabel("Programming Languages", fontsize=12)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+
+# Step 4: Add data labels on the bars
+for i, value in enumerate(popularity):
+    plt.text(value + 0.5, i, f"{value}%", va='center', fontsize=10)
+
+# Step 5: Display the chart
+plt.grid(axis='x', linestyle='--', alpha=0.7)  # Add a grid for better readability
+plt.tight_layout()
+plt.show()

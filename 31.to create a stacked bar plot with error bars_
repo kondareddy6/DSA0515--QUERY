@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample data
+means_men = np.array([22, 30, 35, 35, 26])
+means_women = np.array([25, 32, 30, 35, 29])
+std_dev_men = np.array([4, 3, 4, 1, 5])
+std_dev_women = np.array([3, 5, 2, 3, 3])
+
+# Bar positions
+x = np.arange(len(means_men))
+
+# Bar width
+width = 0.5
+
+# Plot men bars
+plt.bar(x, means_men, width, yerr=std_dev_men, label='Men', color='blue', capsize=5)
+
+# Plot women bars stacked on top of men
+plt.bar(x, means_women, width, yerr=std_dev_women, bottom=means_men, label='Women', color='orange', capsize=5)
+
+# Labels and title
+plt.xlabel('Categories')
+plt.ylabel('Scores')
+plt.title('Stacked Bar Plot with Error Bars')
+plt.xticks(x, ['A', 'B', 'C', 'D', 'E'])
+plt.legend()
+
+# Show the plot
+plt.tight_layout()
+plt.show()

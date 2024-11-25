@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Step 1: Define the data for the plots
+x = np.linspace(0, 10, 100)  # Generate 100 points between 0 and 10
+y1 = np.sin(x)               # Line 1: Sine function
+y2 = np.cos(x)               # Line 2: Cosine function
+y3 = np.exp(x / 10)          # Line 3: Exponential function
+y4 = np.log(x + 1)           # Line 4: Logarithmic function
+
+# Step 2: Create multiple subplots
+plt.figure(figsize=(10, 8))  # Set figure size
+
+# Subplot 1: Sine
+plt.subplot(2, 2, 1)  # 2 rows, 2 columns, position 1
+plt.plot(x, y1, color='blue')
+plt.title("Sine Function")
+plt.xlabel("X")
+plt.ylabel("sin(X)")
+
+# Subplot 2: Cosine
+plt.subplot(2, 2, 2)  # 2 rows, 2 columns, position 2
+plt.plot(x, y2, color='green')
+plt.title("Cosine Function")
+plt.xlabel("X")
+plt.ylabel("cos(X)")
+
+# Subplot 3: Exponential
+plt.subplot(2, 2, 3)  # 2 rows, 2 columns, position 3
+plt.plot(x, y3, color='red')
+plt.title("Exponential Function")
+plt.xlabel("X")
+plt.ylabel("exp(X/10)")
+
+# Subplot 4: Logarithmic
+plt.subplot(2, 2, 4)  # 2 rows, 2 columns, position 4
+plt.plot(x, y4, color='purple')
+plt.title("Logarithmic Function")
+plt.xlabel("X")
+plt.ylabel("log(X+1)")
+
+# Step 3: Adjust layout and display
+plt.tight_layout()  # Prevent overlapping
+plt.show()

@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Step 1: Define the data
+groups = ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5']
+men_means = [22, 30, 35, 35, 26]
+women_means = [25, 32, 30, 35, 29]
+
+# Step 2: Set up the position for the bars
+x = np.arange(len(groups))  # The label locations
+width = 0.35  # Width of the bars
+
+# Step 3: Create the bar plot
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot bars for men and women
+bars1 = ax.bar(x - width/2, men_means, width, label='Men', color='blue')
+bars2 = ax.bar(x + width/2, women_means, width, label='Women', color='green')
+
+# Step 4: Add labels and title
+ax.set_xlabel('Groups', fontsize=12)
+ax.set_ylabel('Scores', fontsize=12)
+ax.set_title('Scores by Group and Gender', fontsize=14)
+ax.set_xticks(x)
+ax.set_xticklabels(groups, fontsize=10)
+ax.legend()
+
+# Step 5: Display the bar plot
+plt.tight_layout()  # Adjust the layout to fit labels
+plt.show()

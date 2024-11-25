@@ -1,0 +1,34 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Step 1: Read data from CSV file
+file_path = 'fdata.csv'  # Replace with your file path
+data = pd.read_csv(file_path)
+
+# Step 2: Extract necessary columns
+dates = data['Date']
+open_prices = data['Open']
+high_prices = data['High']
+low_prices = data['Low']
+close_prices = data['Close']
+
+# Step 3: Plot the line charts
+plt.figure(figsize=(10, 6))
+
+# Plot each line
+plt.plot(dates, open_prices, marker='o', label='Open', color='blue')
+plt.plot(dates, high_prices, marker='o', label='High', color='green')
+plt.plot(dates, low_prices, marker='o', label='Low', color='red')
+plt.plot(dates, close_prices, marker='o', label='Close', color='purple')
+
+# Step 4: Customize the chart
+plt.xlabel("Date")
+plt.ylabel("Price (USD)")
+plt.title("Alphabet Inc. Financial Data (Oct 3, 2016 - Oct 7, 2016)")
+plt.legend()
+plt.xticks(rotation=45)
+plt.grid()
+
+# Step 5: Display the plot
+plt.tight_layout()
+plt.show()

@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+# Step 1: Define data for the lines
+x = [1, 2, 3, 4, 5]
+y1 = [1, 4, 9, 16, 25]   # Line 1: y = x^2
+y2 = [1, 8, 27, 64, 125] # Line 2: y = x^3
+
+# Step 2: Plot the lines
+plt.plot(x, y1, label="y = x^2", color='blue', linewidth=2)    # Blue line with width 2
+plt.plot(x, y2, label="y = x^3", color='green', linewidth=4)   # Green line with width 4
+
+# Step 3: Add legends and labels
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Plot with Multiple Lines")
+plt.legend()  # Display the legend
+
+# Step 4: Show the plot
+plt.grid()  # Add a grid for better readability
+plt.show()
